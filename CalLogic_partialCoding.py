@@ -1,3 +1,6 @@
+from tkinter import Tk
+import math
+
 class Calculator:
 	def __init__(self):
 		self.ans = 0
@@ -79,12 +82,7 @@ class Calculator:
 	def entry_allC(self):
 		self.C_entry()
 		self.ans = 0
-		
-	def mathsPM(self):
-		self.result() = False
-		self.num = -(float(EntrDisplay.get()))
-		self.display(self.num)
-		
+
 	def sqrd(self):
 		self.result = False
 		self.num = math.sqrt(float(EntrDisplay.get()))
