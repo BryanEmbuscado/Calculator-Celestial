@@ -1,6 +1,13 @@
 from tkinter import Tk
 import math
 
+root = Tk()
+blank_space = ""
+root.title(50 * blank_space + "Celestial")
+root.resizable(width=False , height=False)
+root.geometry("440x576+465+43")
+
+
 class Calculator:
 	def __init__(self):
 		self.ans = 0
@@ -41,14 +48,16 @@ class Calculator:
 		EntrDisplay.insert(0, value)
 			
 	def validFunc(self):
-		self.operate == "add":
+		if self.operate == "add":
 			self.ans += self.num
-		self.operate == "subtract":
+		if self.operate == "subtract":
 			self.ans -= self.num
-		self.operate == "multiply":
+		if self.operate == "multiply":
 			self.ans *= self.num
-		self.operate == "add":
+		if self.operate == "divide":
 			self.ans /= self.num
+		if self.operate == "mod" :
+			self.ans %= self.num
 		
 		self.inputValue = True
 		self.check_ans = False
@@ -82,9 +91,10 @@ class Calculator:
 	def entry_allC(self):
 		self.C_entry()
 		self.ans = 0
-
+		
 	def sqrd(self):
 		self.result = False
 		self.num = math.sqrt(float(EntrDisplay.get()))
 		self.display(self.num)
 		
+root.mainloop()
