@@ -1,0 +1,82 @@
+from tkinter import Tk
+import math
+
+root = Tk()
+blank_space = ""
+root.title(50 * blank_space + "Celestial")
+root.resizable(width=False , height=False)
+root.geometry("440x576+465+43")
+root.configure(bg='#4997d0')
+root.iconbitmap('Celes.ico')
+
+coverFrame = Frame (root, bd = 2-0, pady=2, relief = Ridge)
+coverFrame.grid()
+
+coverMainFrame = Frame (coverFrame, bd = 10, pady=2, bg='#4997d0', relief = Ridge)
+coverMainFrame.grid()
+
+MainFrame = Frame (coverNainFrame, bd = 5, pady=2, relief = Ridge)
+MainFrame.grid()
+
+added_value = Calculator()
+entDisplay = Entry(MainFrame, font=('arial', 18, 'bold'), bd=14, width=26, bg='#4997d0', justify=RIGHT)
+entDisplay.grid(row=0, column=4, columnspan=4, pady=1)
+entDisplay.insert(0, "0")
+
+numberpad = "789456123"
+i = 0
+btn = []
+
+for r in range(3,6):
+    for j in range(3):
+        btn.append(Button(MainFrame, width=6, height=2, font=('arial', 16, 'bold'),bd=4, text=numberpad[i]))
+        btn[i].grid(row=r, column=j, pady=1)
+        i += 1
+
+btnBackSpace=Button(MainFrame, width=6, height=2, font=('arial', 16, 'bold'),bd=4, text="", bg='#4997d0')
+btnBackSpace.grid(rows=1, column=0, pady=1)
+
+btnClear=Button(MainFrame, width=6, height=2, font=('arial', 16, 'bold'),bd=4, text=chr(67), bg='#4997d0')
+btnClear.grid(rows=1, column=1, pady=1)
+
+btnClearAll=Button(MainFrame, width=6, height=2, font=('arial', 16, 'bold'),bd=4, text=chr(67)+chr(69), bg='#4997d0')
+btnClearAll.grid(rows=1, column=2, pady=1)
+
+btnPM=Button(MainFrame, width=6, height=2, font=('arial', 16, 'bold'),bd=4, text=chr(177), bg='#4997d0')
+btnPM.grid(rows=1, column=3, pady=1)
+
+btnSq=Button(MainFrame, width=6, height=2, font=('arial', 16, 'bold'),bd=4, text="√")
+btnSq.grid(rows=2, column=0, pady=1)
+
+btnCos=Button(MainFrame, width=6, height=2, font=('arial', 16, 'bold'),bd=4, text="cos")
+btnCos.grid(rows=2, column=1, pady=1)
+
+btnTan=Button(MainFrame, width=6, height=2, font=('arial', 16, 'bold'),bd=4, text="tan")
+btnTan.grid(rows=2, column=2, pady=1)
+
+btnSin=Button(MainFrame, width=6, height=2, font=('arial', 16, 'bold'),bd=4, text="sin")
+btnSin.grid(rows=2, column=3, pady=1)
+
+btnAdd=Button(MainFrame, width=6, height=2, font=('arial', 16, 'bold'),bd=4, text="+", bg='#4997d0')
+btnAdd.grid(rows=3, column=3, pady=1)
+
+btnSub=Button(MainFrame, width=6, height=2, font=('arial', 16, 'bold'),bd=4, text="-", bg='#4997d0')
+btnSub.grid(rows=4, column=3, pady=1)
+
+btnMult=Button(MainFrame, width=6, height=2, font=('arial', 16, 'bold'),bd=4, text="*", bg='#4997d0')
+btnMult.grid(rows=5, column=3, pady=1)
+
+btnDiv=Button(MainFrame, width=6, height=2, font=('arial', 16, 'bold'),bd=4, text=chr(247), bg='#4997d0')
+btnDiv.grid(rows=6, column=3, pady=1)
+
+btnZero=Button(MainFrame, width=6, height=2, font=('arial', 16, 'bold'),bd=4, text="0", bg='#4997d0')
+btnZero.grid(rows=6, column=0, pady=1)
+
+btnDot=Button(MainFrame, width=6, height=2, font=('arial', 16, 'bold'),bd=4, text=".", bg='#4997d0')
+btnDot.grid(rows=6, column=1, pady=1)
+
+btnEquals=Button(MainFrame, width=6, height=2, font=('arial', 16, 'bold'),bd=4, text="=", bg='#4997d0')
+btnEquals.grid(rows=6, column=2, pady=1)
+
+
+root.mainloop()
