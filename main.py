@@ -129,7 +129,7 @@ class Celestial:
         self.field.delete(0, END)
         self.field.insert(0, '0')
 
-    def clear1(self, event=None):
+    def clear1(self):
         self.textbox = self.field.get()
         self.textbox = self.textbox[:-1] 
         
